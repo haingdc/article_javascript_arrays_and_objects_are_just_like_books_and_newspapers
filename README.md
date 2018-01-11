@@ -14,7 +14,7 @@ Dưới đây là các chương của một cuốn sách, dưới dạng mảng.
 var book = ['foreword', 'boyWhoLived', 'vanishingGlass', 'lettersFromNoOne', 'afterword'];
 ```
 
-![first Harry Potter book](https://cdn-images-1.medium.com/max/1500/1*FQ6CJaawGTIB_oa8M-Z7GQ.png)
+![first_Harry_Potter_book](E:/repository/other/groking_algorithm/javascript_arrays_and_objects_are_just_like_books_and_newspapers/book.png)
 
 Bạn muốn sử dụng mảng khi thứ tự là tiêu chí hàng đầu cho việc tổ chức dữ liệu. Để bắt đầu đọc một cuốn sách, đa phần chúng ta sẽ chọn cách lướt qua mục lục rồi nhanh chóng đọc từ đầu tới cuối hơn là, lựa chọn tiêu đề ta thấy thú vị nhất ở mục lục và tiếp cận chương đó trước tiên. Thứ tự của các chương sẽ nói cho bạn biết chương tiếp theo là gì.
 
@@ -32,3 +32,28 @@ Hay muốn biết tiêu đề của chương 3, bạn sẽ dùng:
 
 Mỗi khi kết thúc một chương, chương tiếp ta đọc tới sẽ dựa trên thứ tự của nó, thay vì dựa trên tên tiêu đề.
 
+# Đối tượng: Tên khóa là quan trọng nhất
+
+```js
+var newspaper= {
+  sports: 'ARod Hits Home Run',
+  business: 'GE Stock Dips Again',
+  movies: 'Superman Is A Flop'
+}
+```
+
+![newspaper](E:/repository/other/groking_algorithm/javascript_arrays_and_objects_are_just_like_books_and_newspapers/newspaper.png)
+
+Các đối tượng sẽ phù hợp khi bạn muốn **tổ chức dữ liệu theo các chủ đề**. Khi bạn đọc một tờ báo, chúng ta thường không hay đọc từ trang trước tới trang sau. Ưu tiên là thường đọc ở những chủ đề mà bản thân quan tâm. Không quan trọng nó nằm ở đâu, chúng ta chỉ muốn tìm tới trang có vấn đề hấp dẫn mình.
+
+Các đối tượng cũng như vậy, chúng tổ chức thông tin theo từng cặp **khóa/giá trị**.
+
+Nếu bạn muốn xem thông tin về chủ đề tài chính, bạn sẽ sử dụng:
+
+`newspaper[‘business’]`
+
+hoặc
+
+`newspaper.business`
+
+Nó sẽ trở lại cho ta giá trị *‘GE Stock Dips Again’*. Vì vậy, nếu muốn dễ dàng lấy ra dữ liệu phân theo **chủ đề/từ khóa**, bạn có thể tổ chức dữ liệu ở dạng đối tượng.
