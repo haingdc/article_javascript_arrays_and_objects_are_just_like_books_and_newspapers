@@ -57,3 +57,60 @@ hoặc
 `newspaper.business`
 
 Nó sẽ trở lại cho ta giá trị *‘GE Stock Dips Again’*. Vì vậy, nếu muốn dễ dàng lấy ra dữ liệu phân theo **chủ đề/từ khóa**, bạn có thể tổ chức dữ liệu ở dạng đối tượng.
+
+# Kết hợp giữa đối tượng và mảng
+
+Ở phần trên, chúng ta chỉ lưu các chuỗi vào trong mảng hoặc đối tượng. Thêm vào đó, chúng ta cũng có thể lưu các kiểu dữ liệu khác như số, boolean, hay thậm chí lưu:
+
+1. các mảng bên trong đối tượng
+2. các đối tượng bên trong mảng
+3. các mảng bên trong mảng
+4. các đối tượng bên trong đối tượng
+
+Trở lại ví dụ về sách ở trên. Làm thế nào nếu chúng ta cũng muốn lưu thông về số lượng trang ở mỗi chương?
+
+Ở đây chúng ta phải đảm bảo thứ tự của các chương và thêm thông tin về số lượng trang cho mỗi một chương.
+
+🤔 Bạn sẽ muốn lưu theo kiểu nào trong 2 kiểu sau?
+
+```js
+var book =[
+  [‘foreword’, 14],
+  [‘boywholived’, 18],
+  [‘vanishingGlass’, 13],
+  [‘lettersFromNoOne’, 17],
+  [‘afterword’, 19]
+]
+```
+
+hay
+
+```js
+var book = [
+  {name:'foreword', pageCount: 14},
+  {name:'boyWhoLived', pageCount: 18},
+  {name:'vanishingGlass', pageCount: 13},
+  {name:'lettersFromNoOne', pageCount: 17},
+  {name:'afterword', pageCount: 19}
+];
+```
+
+Thực tế, ta có thể chọn cái nào cũng được. Tuy nhiên, để biết số lượng trang của chương hai, ta thấy sử dụng `book[1][‘pageCount’]` sẽ trực quan hơn so với `book[1][1]`.
+
+Giả sử bạn muốn thấy xếp hạng các tác giả hàng đầu dựa theo chủ đề của một tờ báo. Bạn có thể để thông tin về xếp hạng này trong một mảng, bởi vì thứ tự các tác giả là quan trọng. Sau đó đặt nó trong một đối tượng *newspaper* như sau:
+
+```js
+var newspaper= {
+  sports: 'ARod Hits Home Run',
+  sportsWriters: ['Miramon Nuevo', 'Rick Reilly', 'Woddy Paige'],
+  business: 'GE Stock Dips Again',
+  businessWriters: ['Adam Smith', 'Albert Humphrey', 'Charles Handy'],
+  movies: 'Superman Is A Flop',
+  moviesWriters: ['Rogert Ebert', 'Andrew Sarris', 'Wesley Morris']
+}
+```
+
+Mảng sẽ rất phù hợp để lưu các tác giả. Chúng ta sẽ biết rằng tác giả đứng trước sẽ có thứ hạng cao hơn.
+
+❓ Một cách khác, bạn sẽ chỉ dùng '*newspaper*' để lưu các **đối tượng có kiểu chủ đề**. Ví dụ, đối tượng *sports* sẽ chứa thông tin về tiêu đề và danh sách tác giả. Tôi sẽ không đưa ra cách làm để bạn tự trả lời nhé!
+
